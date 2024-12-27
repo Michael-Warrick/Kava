@@ -11,4 +11,4 @@ namespace Graphics {
     private:
         vk::Buffer vertexBuffer;
     };
-}
+} // namespace Graphics

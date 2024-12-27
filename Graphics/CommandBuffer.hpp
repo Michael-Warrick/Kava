@@ -6,21 +6,25 @@
 namespace Graphics {
     class CommandBuffer {
     public:
-        CommandBuffer(const vk::Device &logicalDevice, const vk::RenderPass &renderPass,
-                      const std::vector<vk::Framebuffer> &swapChainFramebuffers, const vk::Extent2D &swapChainExtent,
-                      const vk::CommandPool &commandPool, vk::PipelineBindPoint pipelineBindPoint,
-                      const vk::Pipeline &pipeline, const int maxFramesInFlight);
+        CommandBuffer(const vk::Device &logicalDevice,
+                      const vk::RenderPass &renderPass,
+                      const std::vector<vk::Framebuffer> &swapChainFramebuffers,
+                      const vk::Extent2D &swapChainExtent,
+                      const vk::CommandPool &commandPool,
+                      vk::PipelineBindPoint pipelineBindPoint,
+                      const vk::Pipeline &pipeline,
+                      const int maxFramesInFlight);
 
         void Record(vk::CommandBuffer commandBuffer, uint32_t imageIndex);
 
     private:
         void createGraphicsCommandBuffers();
 
-        void recordGraphicsCommandBuffers(vk::CommandBuffer commandBuffer, uint32_t imageIndex);
+        void recordGraphicsCommandBuffers(vk::CommandBuffer commandBuffer,
+                                          uint32_t imageIndex);
 
-//        void createComputeCommandBuffer();
-//        void recordComputeCommandBuffer();
-
+        //        void createComputeCommandBuffer();
+        //        void recordComputeCommandBuffer();
 
         vk::Device m_LogicalDevice;
         vk::RenderPass m_RenderPass;

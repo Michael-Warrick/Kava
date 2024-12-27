@@ -2,15 +2,15 @@
 
 #define MAX_FRAMES_IN_FLIGHT 2
 
+#include <GLFW/glfw3.h>
 #include <iostream>
 #include <memory>
-#include <GLFW/glfw3.h>
 
-#include "Instance.hpp"
-#include "Surface.hpp"
 #include "Device.hpp"
-#include "SwapChain.hpp"
+#include "Instance.hpp"
 #include "Pipeline.hpp"
+#include "Surface.hpp"
+#include "SwapChain.hpp"
 
 namespace Graphics {
     class Renderer {

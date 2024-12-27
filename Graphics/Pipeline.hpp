@@ -2,15 +2,16 @@
 
 #include <vulkan/vulkan.hpp>
 
+#include "../IO/File.hpp"
+#include "Geometry.hpp"
 #include "SwapChain.hpp"
 #include "Vertex.hpp"
-#include "Geometry.hpp"
-#include "../IO/File.hpp"
 
 namespace Graphics {
     class Pipeline {
     public:
-        Pipeline(const vk::PhysicalDevice &physicalDevice, const vk::Device &logicalDevice, const vk::Format &format,
+        Pipeline(const vk::PhysicalDevice &physicalDevice,
+                 const vk::Device &logicalDevice, const vk::Format &format,
                  const vk::SampleCountFlagBits &msaaSamples);
 
         ~Pipeline();
@@ -20,9 +21,12 @@ namespace Graphics {
     private:
         void createRenderPass();
         [[nodiscard]] vk::Format findDepthFormat() const;
-        [[nodiscard]] vk::Format findSupportedFormat(const std::vector<vk::Format> &candidates, vk::ImageTiling tiling,
-                                                     vk::FormatFeatureFlags features) const;
-        void createGraphicsPipeline(const std::string &vertexShaderFilePath, const std::string &fragmentShaderFilePath);
+        [[nodiscard]] vk::Format
+        findSupportedFormat(const std::vector<vk::Format> &candidates,
+                            vk::ImageTiling tiling,
+                            vk::FormatFeatureFlags features) const;
+        void createGraphicsPipeline(const std::string &vertexShaderFilePath,
+                                    const std::string &fragmentShaderFilePath);
         vk::ShaderModule createShaderModule(const std::vector<char> &code);
 
         vk::PhysicalDevice m_PhysicalDevice;

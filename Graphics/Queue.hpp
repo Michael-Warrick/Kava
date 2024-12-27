@@ -8,16 +8,18 @@
 namespace Graphics {
     class Queue {
     public:
-         struct QueueFamilyIndices {
+        struct QueueFamilyIndices {
             std::optional<uint32_t> graphicsFamily;
             std::optional<uint32_t> presentFamily;
 
             bool IsComplete() {
                 return graphicsFamily.has_value() && presentFamily.has_value();
             }
-         };
+        };
 
-        static QueueFamilyIndices FindQueueFamilies(vk::PhysicalDevice gpu, vk::SurfaceKHR surface);
+        static QueueFamilyIndices FindQueueFamilies(vk::PhysicalDevice gpu,
+                                                    vk::SurfaceKHR surface);
+
     private:
     };
 } // namespace Graphics

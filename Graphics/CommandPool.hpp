@@ -1,12 +1,13 @@
 #pragma once
 
-#include <vulkan/vulkan.hpp>
 #include "Queue.hpp"
+#include <vulkan/vulkan.hpp>
 
 namespace Graphics {
     class CommandPool {
     public:
-        CommandPool(const vk::SurfaceKHR &surface, const vk::PhysicalDevice &physicalDevice,
+        CommandPool(const vk::SurfaceKHR &surface,
+                    const vk::PhysicalDevice &physicalDevice,
                     const vk::Device &logicalDevice);
 
         ~CommandPool();

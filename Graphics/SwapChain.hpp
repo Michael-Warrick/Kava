@@ -9,9 +9,9 @@
 
 #include <GLFW/glfw3.h>
 
-#include "Queue.hpp"
-#include "ImageView.hpp"
 #include "Framebuffer.hpp"
+#include "ImageView.hpp"
+#include "Queue.hpp"
 
 namespace Graphics {
     class SwapChain {
@@ -22,7 +22,8 @@ namespace Graphics {
             std::vector<vk::PresentModeKHR> presentModes;
         };
 
-        SwapChain(GLFWwindow *window, const vk::SurfaceKHR &surface, const vk::PhysicalDevice &physicalDevice,
+        SwapChain(GLFWwindow *window, const vk::SurfaceKHR &surface,
+                  const vk::PhysicalDevice &physicalDevice,
                   const vk::Device &logicalDevice);
 
         ~SwapChain();
@@ -31,7 +32,9 @@ namespace Graphics {
 
         void Recreate(vk::RenderPass renderPass);
 
-        static SwapChainSupportDetails QuerySwapChainSupport(vk::PhysicalDevice physicalDevice, vk::SurfaceKHR surface);
+        static SwapChainSupportDetails
+        QuerySwapChainSupport(vk::PhysicalDevice physicalDevice,
+                              vk::SurfaceKHR surface);
 
         [[nodiscard]] vk::Format imageFormat() const;
 
@@ -44,11 +47,14 @@ namespace Graphics {
     private:
         void createSwapChain();
 
-        static vk::SurfaceFormatKHR chooseSurfaceFormat(const std::vector<vk::SurfaceFormatKHR> &availableFormats);
+        static vk::SurfaceFormatKHR chooseSurfaceFormat(
+            const std::vector<vk::SurfaceFormatKHR> &availableFormats);
 
-        static vk::PresentModeKHR choosePresentMode(const std::vector<vk::PresentModeKHR> &availablePresentModes);
+        static vk::PresentModeKHR choosePresentMode(
+            const std::vector<vk::PresentModeKHR> &availablePresentModes);
 
-        [[nodiscard]] vk::Extent2D chooseExtent(const vk::SurfaceCapabilitiesKHR &capabilities) const;
+        [[nodiscard]] vk::Extent2D
+        chooseExtent(const vk::SurfaceCapabilitiesKHR &capabilities) const;
 
         void createImageViews();
 

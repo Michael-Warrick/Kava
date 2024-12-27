@@ -26,7 +26,7 @@ namespace Platform {
 
         uint16_t m_Width = 1280;
         uint16_t m_Height = 800;
-        std::string m_Title = "Meusartifix 1.0.0";
+        std::string m_Title = "Kava 1.0.0";
 
         bool m_FramebufferResized = false;
 

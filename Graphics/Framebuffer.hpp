@@ -5,8 +5,10 @@
 namespace Graphics {
     class Framebuffer {
     public:
-        Framebuffer(const vk::Device &logicalDevice, const std::vector<vk::ImageView> &imageViews, const vk::RenderPass &renderPass,
-                    const uint32_t &width, const uint32_t &height);
+        Framebuffer(const vk::Device &logicalDevice,
+                    const std::vector<vk::ImageView> &imageViews,
+                    const vk::RenderPass &renderPass, const uint32_t &width,
+                    const uint32_t &height);
         ~Framebuffer();
 
     private:

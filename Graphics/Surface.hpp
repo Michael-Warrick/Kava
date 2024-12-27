@@ -13,6 +13,7 @@ namespace Graphics {
         ~Surface();
 
         vk::SurfaceKHR get();
+
     private:
         vk::Instance m_Instance;
         vk::SurfaceKHR m_Surface;

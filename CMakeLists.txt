@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 find_package(Vulkan REQUIRED)
 
-# add_subdirectory(Vendor/glfw)
-# add_subdirectory(Vendor/glm)
+add_subdirectory(Vendor/glfw)
+add_subdirectory(Vendor/glm)
 
 add_executable(${PROJECT_NAME}
         # Platform
@@ -37,13 +37,13 @@ add_executable(${PROJECT_NAME}
         # Physics
 )
 
-# add_subdirectory(Resources/Shaders)
-# add_dependencies(${PROJECT_NAME} Shaders)
+add_subdirectory(Resources/Shaders)
+add_dependencies(${PROJECT_NAME} Shaders)
 
 target_include_directories(${PROJECT_NAME}
         PUBLIC
-        $<INSTALL_INTERFACE:Engine>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Engine>
+        $<INSTALL_INTERFACE:>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
         glfw
         glm
         Vulkan::Vulkan

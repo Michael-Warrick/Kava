@@ -1,7 +1,7 @@
 #pragma once
 
-#include <vector>
 #include "Vertex.hpp"
+#include <vector>
 
 namespace Graphics {
     class Geometry {
@@ -12,9 +12,8 @@ namespace Graphics {
 
     private:
         const std::vector<Graphics::Vertex> triangleVertices = {
-                {{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f}},
-                {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f}},
-                {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}
-        };
+            {{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f}},
+            {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f}},
+            {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}};
     };
 } // namespace Graphics

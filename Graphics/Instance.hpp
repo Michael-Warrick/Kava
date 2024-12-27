@@ -1,8 +1,8 @@
 #pragma once
 
+#include <GLFW/glfw3.h>
 #include <iostream>
 #include <vulkan/vulkan.hpp>
-#include <GLFW/glfw3.h>
 
 namespace Graphics {
     class Instance {
@@ -20,26 +20,32 @@ namespace Graphics {
 
         [[nodiscard]] std::vector<const char *> getRequiredExtensions() const;
 
-        static void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT &createInfo);
+        static void populateDebugMessengerCreateInfo(
+            VkDebugUtilsMessengerCreateInfoEXT &createInfo);
 
         void setupDebugMessenger();
 
-        static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
-                                                            VkDebugUtilsMessageTypeFlagsEXT messageType,
-                                                            const VkDebugUtilsMessengerCallbackDataEXT *callbackData,
-                                                            void *userData);
+        static VKAPI_ATTR VkBool32 VKAPI_CALL
+        debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
+                      VkDebugUtilsMessageTypeFlagsEXT messageType,
+                      const VkDebugUtilsMessengerCallbackDataEXT *callbackData,
+                      void *userData);
 
-        static VkResult
-        createDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT *createInfo,
-                                     const VkAllocationCallbacks *allocator,
-                                     VkDebugUtilsMessengerEXT *debugMessenger);
+        static VkResult createDebugUtilsMessengerEXT(
+            VkInstance instance,
+            const VkDebugUtilsMessengerCreateInfoEXT *createInfo,
+            const VkAllocationCallbacks *allocator,
+            VkDebugUtilsMessengerEXT *debugMessenger);
 
-        static void destroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger,
-                                                  const VkAllocationCallbacks *allocator);
+        static void
+        destroyDebugUtilsMessengerEXT(VkInstance instance,
+                                      VkDebugUtilsMessengerEXT debugMessenger,
+                                      const VkAllocationCallbacks *allocator);
 
         vk::Instance m_Instance;
         VkDebugUtilsMessengerEXT m_DebugMessenger = nullptr;
-        const std::vector<const char *> m_ValidationLayers = {"VK_LAYER_KHRONOS_validation"};
+        const std::vector<const char *> m_ValidationLayers = {
+            "VK_LAYER_KHRONOS_validation"};
 
 #ifdef NDEBUG
         const bool m_ValidationLayersEnabled = false;
