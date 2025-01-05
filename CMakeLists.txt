@@ -16,18 +16,18 @@ add_executable(${PROJECT_NAME}
 
         # Graphics
         ${CMAKE_SOURCE_DIR}/Graphics/stb_image/stb_image_impl.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/Renderer.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/Instance.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/Surface.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/Device.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/Queue.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/SwapChain.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/ImageView.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/Pipeline.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/Framebuffer.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/CommandPool.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/CommandBuffer.cpp
-        ${CMAKE_SOURCE_DIR}/Graphics/Buffer.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/Renderer.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/Instance.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/Surface.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/Device.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/Queue.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/SwapChain.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/ImageView.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/Pipeline.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/Framebuffer.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/CommandPool.cpp
+        ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/CommandBuffer.cpp
+        # ${CMAKE_SOURCE_DIR}/Graphics/Vulkan/Buffer.cpp
 
         # Input
 

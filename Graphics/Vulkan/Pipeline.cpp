@@ -1,6 +1,6 @@
 #include "Pipeline.hpp"
 
-Graphics::Pipeline::Pipeline(const vk::PhysicalDevice &physicalDevice,
+Graphics::Vulkan::Pipeline::Pipeline(const vk::PhysicalDevice &physicalDevice,
                              const vk::Device &logicalDevice,
                              const vk::Format &format,
                              const vk::SampleCountFlagBits &msaaSamples)
@@ -11,15 +11,15 @@ Graphics::Pipeline::Pipeline(const vk::PhysicalDevice &physicalDevice,
                            "./Resources/Shaders/triangle.frag.spv");
 }
 
-Graphics::Pipeline::~Pipeline() {
+Graphics::Vulkan::Pipeline::~Pipeline() {
     m_LogicalDevice.destroyPipeline(m_GraphicsPipeline);
     m_LogicalDevice.destroyPipelineLayout(m_PipelineLayout);
     m_LogicalDevice.destroyRenderPass(m_RenderPass);
 }
 
-vk::RenderPass Graphics::Pipeline::renderPass() const { return m_RenderPass; }
+vk::RenderPass Graphics::Vulkan::Pipeline::renderPass() const { return m_RenderPass; }
 
-void Graphics::Pipeline::createRenderPass() {
+void Graphics::Vulkan::Pipeline::createRenderPass() {
     vk::AttachmentDescription colorAttachment =
         vk::AttachmentDescription()
             .setFormat(m_SwapChainImageFormat)
@@ -104,7 +104,7 @@ void Graphics::Pipeline::createRenderPass() {
     }
 }
 
-vk::Format Graphics::Pipeline::findDepthFormat() const {
+vk::Format Graphics::Vulkan::Pipeline::findDepthFormat() const {
     return findSupportedFormat(
         {vk::Format::eD32Sfloat, vk::Format::eD32SfloatS8Uint,
          vk::Format::eD24UnormS8Uint},
@@ -112,7 +112,7 @@ vk::Format Graphics::Pipeline::findDepthFormat() const {
         vk::FormatFeatureFlagBits::eDepthStencilAttachment);
 }
 
-vk::Format Graphics::Pipeline::findSupportedFormat(
+vk::Format Graphics::Vulkan::Pipeline::findSupportedFormat(
     const std::vector<vk::Format> &candidates, const vk::ImageTiling tiling,
     const vk::FormatFeatureFlags features) const {
     for (const vk::Format format : candidates) {
@@ -131,7 +131,7 @@ vk::Format Graphics::Pipeline::findSupportedFormat(
     throw std::runtime_error("Failed to find supported format!");
 }
 
-void Graphics::Pipeline::createGraphicsPipeline(
+void Graphics::Vulkan::Pipeline::createGraphicsPipeline(
     const std::string &vertexShaderFilePath,
     const std::string &fragmentShaderFilePath) {
     auto vertexShaderCode = IO::File::Read(vertexShaderFilePath);
@@ -263,7 +263,7 @@ void Graphics::Pipeline::createGraphicsPipeline(
 }
 
 vk::ShaderModule
-Graphics::Pipeline::createShaderModule(const std::vector<char> &code) {
+Graphics::Vulkan::Pipeline::createShaderModule(const std::vector<char> &code) {
     vk::ShaderModuleCreateInfo createInfo =
         vk::ShaderModuleCreateInfo()
             .setCodeSize(code.size())

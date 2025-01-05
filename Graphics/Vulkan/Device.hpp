@@ -16,6 +16,9 @@ namespace Graphics {
         [[nodiscard]] vk::PhysicalDevice physical() const;
         [[nodiscard]] vk::Device logical() const;
         [[nodiscard]] vk::SampleCountFlagBits msaaSamples() const;
+        [[nodiscard]] static uint32_t
+        FindMemoryType(vk::PhysicalDevice physicalDevice, uint32_t typeFilter,
+                       vk::MemoryPropertyFlags properties);
 
     private:
         void pickPhysicalDevice();

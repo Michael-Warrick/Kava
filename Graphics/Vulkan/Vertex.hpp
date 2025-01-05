@@ -9,7 +9,7 @@ namespace Graphics {
         glm::vec3 color;
 
         static vk::VertexInputBindingDescription getBindingDescription() {
-            vk::VertexInputBindingDescription bindingDescription =
+            constexpr vk::VertexInputBindingDescription bindingDescription =
                 vk::VertexInputBindingDescription()
                     .setBinding(0)
                     .setStride(sizeof(Vertex))

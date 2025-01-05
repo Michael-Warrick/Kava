@@ -1,10 +1,9 @@
 #pragma once
 
-#include <GLFW/glfw3.h>
 #include <iostream>
-#include <optional>
+#include <GLFW/glfw3.h>
 
-#include "Graphics/Renderer.hpp"
+#include "Graphics/Vulkan/Renderer.hpp"
 
 namespace Platform {
     class Window {
@@ -29,7 +28,5 @@ namespace Platform {
         std::string m_Title = "Kava 1.0.0";
 
         bool m_FramebufferResized = false;
-
-        std::optional<Graphics::Renderer> m_Renderer;
     };
 } // namespace Platform

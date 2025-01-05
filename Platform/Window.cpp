@@ -19,8 +19,6 @@ Platform::Window::Window() {
 
     glfwSetWindowUserPointer(m_Window, this);
     glfwSetFramebufferSizeCallback(m_Window, framebufferResizeCallback);
-
-    m_Renderer.emplace(m_Window);
 }
 
 Platform::Window::~Window() {
@@ -32,7 +30,9 @@ Platform::Window::~Window() {
     glfwTerminate();
 }
 
-void Platform::Window::Present() { m_Renderer->DrawFrame(); }
+void Platform::Window::Present() { 
+    // m_Renderer->DrawFrame();
+}
 
 void Platform::Window::PollEvents() { return glfwPollEvents(); }
 

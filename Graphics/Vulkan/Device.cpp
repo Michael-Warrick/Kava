@@ -133,6 +133,23 @@ vk::SampleCountFlagBits Graphics::Device::getMaxUsableSamples() const {
     return vk::SampleCountFlagBits::e1;
 }
 
+uint32_t
+Graphics::Device::FindMemoryType(vk::PhysicalDevice physicalDevice, uint32_t typeFilter,
+                                 vk::MemoryPropertyFlags properties) {
+    vk::PhysicalDeviceMemoryProperties memoryProperties;
+    physicalDevice.getMemoryProperties(&memoryProperties);
+
+    for (uint32_t i = 0; i < memoryProperties.memoryTypeCount; i++) {
+        if ((typeFilter & (1 << i)) &&
+            (memoryProperties.memoryTypes[i].propertyFlags & properties) ==
+                properties) {
+            return i;
+        }
+    }
+
+    throw std::runtime_error("Failed to find memory type!");
+}
+
 void Graphics::Device::createLogicalDevice() {
     Queue::QueueFamilyIndices indices =
         Queue::FindQueueFamilies(m_PhysicalDevice, m_Surface);
