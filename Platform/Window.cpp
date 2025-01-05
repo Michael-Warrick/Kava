@@ -30,10 +30,6 @@ Platform::Window::~Window() {
     glfwTerminate();
 }
 
-void Platform::Window::Present() { 
-    // m_Renderer->DrawFrame();
-}
-
 void Platform::Window::PollEvents() { return glfwPollEvents(); }
 
 GLFWwindow *Platform::Window::platformWindow() { return m_Window; }

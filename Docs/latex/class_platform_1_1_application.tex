@@ -1,0 +1,89 @@
+\doxysection{Platform\+::Application Class Reference}
+\hypertarget{class_platform_1_1_application}{}\label{class_platform_1_1_application}\index{Platform::Application@{Platform::Application}}
+
+
+An umbrella class managing all major engine systems.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_platform_1_1_application_a00df73b15c5584dcf6a95ac862c8421e}{Application}} ()
+\begin{DoxyCompactList}\small\item\em Default \doxylink{class_platform_1_1_application}{Application} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_platform_1_1_application_ad1fb6126eac0a9b24d6b2ce73cb08118}{\texorpdfstring{$\sim$}{\string~}\+Application}} ()=default
+\begin{DoxyCompactList}\small\item\em Default \doxylink{class_platform_1_1_application}{Application} destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_platform_1_1_application_a3d4611e07da69b1c9a624200fc8c154a}{Run}} ()
+\begin{DoxyCompactList}\small\item\em A method that drives the main application loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_platform_1_1_window}{Window}} \mbox{\hyperlink{class_platform_1_1_application_ad26e3ec3c713d77fcd70fe20e1918686}{m\+\_\+\+Window}}
+\item 
+Graphics\+::\+Vulkan\+::\+Renderer \mbox{\hyperlink{class_platform_1_1_application_adb606544a46dd86211abad9b2920c1ed}{m\+\_\+\+Renderer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An umbrella class managing all major engine systems. 
+
+The \doxylink{class_platform_1_1_application}{Application} class handles everything from platform windows to renderers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_platform_1_1_application_a00df73b15c5584dcf6a95ac862c8421e}\index{Platform::Application@{Platform::Application}!Application@{Application}}
+\index{Application@{Application}!Platform::Application@{Platform::Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily \label{class_platform_1_1_application_a00df73b15c5584dcf6a95ac862c8421e} 
+Platform\+::\+Application\+::\+Application (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default \doxylink{class_platform_1_1_application}{Application} constructor. 
+
+\doxylink{class_platform_1_1_application_a00df73b15c5584dcf6a95ac862c8421e}{Application} provides a way to instantiate the principal \doxylink{class_platform_1_1_application}{Application} object, initialising a window and suitible renderer. \Hypertarget{class_platform_1_1_application_ad1fb6126eac0a9b24d6b2ce73cb08118}\index{Platform::Application@{Platform::Application}!````~Application@{\texorpdfstring{$\sim$}{\string~}Application}}
+\index{````~Application@{\texorpdfstring{$\sim$}{\string~}Application}!Platform::Application@{Platform::Application}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Application()}{\string~Application()}}
+{\footnotesize\ttfamily \label{class_platform_1_1_application_ad1fb6126eac0a9b24d6b2ce73cb08118} 
+Platform\+::\+Application\+::\texorpdfstring{$\sim$}{\string~}\+Application (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default \doxylink{class_platform_1_1_application}{Application} destructor. 
+
+\doxylink{class_platform_1_1_application_ad1fb6126eac0a9b24d6b2ce73cb08118}{\texorpdfstring{$\sim$}{\string~}\+Application} destroys the \doxylink{class_platform_1_1_application}{Application} instance and starts the chain of de-\/allocation of all its scoped member variables. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_platform_1_1_application_a3d4611e07da69b1c9a624200fc8c154a}\index{Platform::Application@{Platform::Application}!Run@{Run}}
+\index{Run@{Run}!Platform::Application@{Platform::Application}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_platform_1_1_application_a3d4611e07da69b1c9a624200fc8c154a} 
+void Platform\+::\+Application\+::\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+A method that drives the main application loop. 
+
+\doxylink{class_platform_1_1_application_a3d4611e07da69b1c9a624200fc8c154a}{Run} is a method that abstracts the top-\/most loop, where it checks for every iteration if the window should remain open and if not shuts down \doxylink{class_platform_1_1_application}{Application}. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_platform_1_1_application_adb606544a46dd86211abad9b2920c1ed}\index{Platform::Application@{Platform::Application}!m\_Renderer@{m\_Renderer}}
+\index{m\_Renderer@{m\_Renderer}!Platform::Application@{Platform::Application}}
+\doxysubsubsection{\texorpdfstring{m\_Renderer}{m\_Renderer}}
+{\footnotesize\ttfamily \label{class_platform_1_1_application_adb606544a46dd86211abad9b2920c1ed} 
+Graphics\+::\+Vulkan\+::\+Renderer Platform\+::\+Application\+::m\+\_\+\+Renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+A member variable to manage Vulkan rendering operations. \Hypertarget{class_platform_1_1_application_ad26e3ec3c713d77fcd70fe20e1918686}\index{Platform::Application@{Platform::Application}!m\_Window@{m\_Window}}
+\index{m\_Window@{m\_Window}!Platform::Application@{Platform::Application}}
+\doxysubsubsection{\texorpdfstring{m\_Window}{m\_Window}}
+{\footnotesize\ttfamily \label{class_platform_1_1_application_ad26e3ec3c713d77fcd70fe20e1918686} 
+\mbox{\hyperlink{class_platform_1_1_window}{Window}} Platform\+::\+Application\+::m\+\_\+\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+A member variable to manage platform window events. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Platform/Application.\+hpp\item 
+Platform/Application.\+cpp\end{DoxyCompactItemize}

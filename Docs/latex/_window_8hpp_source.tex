@@ -1,0 +1,37 @@
+\doxysection{Window.\+hpp}
+\hypertarget{_window_8hpp_source}{}\label{_window_8hpp_source}\index{Platform/Window.hpp@{Platform/Window.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Graphics/Vulkan/Renderer.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }Platform\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_platform_1_1_window}{Window}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_1_1_window}{Window}}();}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_platform_1_1_window}{\string~Window}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ PollEvents();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ GLFWwindow\ *platformWindow();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsOpen();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ framebufferResizeCallback(GLFWwindow\ *window,\ \textcolor{keywordtype}{int}\ width,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ GLFWwindow\ *m\_Window\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ uint16\_t\ m\_Width\ =\ 1280;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ uint16\_t\ m\_Height\ =\ 800;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::string\ m\_Title\ =\ \textcolor{stringliteral}{"{}Kava\ 1.0.0"{}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_FramebufferResized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ \}\ \textcolor{comment}{//\ namespace\ Platform}}
+
+\end{DoxyCode}

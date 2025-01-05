@@ -1,22 +1,18 @@
 #include "Application.hpp"
 
-Platform::Application::Application() : m_Renderer(m_Window.platformWindow()) {}
-
-Platform::Application::~Application() {}
+Platform::Application::Application()
+    : m_Window(), m_Renderer(m_Window.platformWindow()) {}
 
 void Platform::Application::Run() {
     while (m_Window.IsOpen()) {
-        // Process Window Events
+        // Process platform window events
         m_Window.PollEvents();
 
-        // Process Input State
+        // Process input state
 
-        // Update Game State (Physics, Game Logic, AI...)
+        // Update game state (physics, game logic, AI...)
 
-        // Update Renderer
+        // Update renderer
         m_Renderer.DrawFrame();
-
-        // Present Rendered Scene
-        m_Window.Present();
     }
 }

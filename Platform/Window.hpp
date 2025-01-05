@@ -10,8 +10,7 @@ namespace Platform {
     public:
         Window();
         ~Window();
-
-        void Present();
+        
         void PollEvents();
 
         GLFWwindow *platformWindow();
