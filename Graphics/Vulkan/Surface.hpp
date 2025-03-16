@@ -7,15 +7,15 @@
 #include <GLFW/glfw3.h>
 
 namespace Graphics {
-    class Surface {
-    public:
-        Surface(const vk::Instance &instance, GLFWwindow *window);
-        ~Surface();
+class Surface {
+public:
+    Surface(const vk::Instance &instance, GLFWwindow *window);
+    ~Surface();
 
-        vk::SurfaceKHR get();
+    vk::SurfaceKHR get();
 
-    private:
-        vk::Instance m_Instance;
-        vk::SurfaceKHR m_Surface;
-    };
+private:
+    vk::Instance m_Instance;
+    vk::SurfaceKHR m_Surface;
+};
 } // namespace Graphics

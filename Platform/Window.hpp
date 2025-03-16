@@ -1,31 +1,30 @@
 #pragma once
 
-#include <iostream>
 #include <GLFW/glfw3.h>
+#include <iostream>
 
 #include "Graphics/Vulkan/Renderer.hpp"
 
 namespace Platform {
-    class Window {
-    public:
-        Window();
-        ~Window();
-        
-        void PollEvents();
+class Window {
+public:
+    Window();
+    ~Window();
 
-        GLFWwindow *platformWindow();
-        bool IsOpen();
+    void PollEvents();
 
-    private:
-        static void framebufferResizeCallback(GLFWwindow *window, int width,
-                                              int height);
+    GLFWwindow *platformWindow();
+    bool IsOpen();
 
-        GLFWwindow *m_Window = nullptr;
+private:
+    static void framebufferResizeCallback(GLFWwindow *window, int width, int height);
 
-        uint16_t m_Width = 1280;
-        uint16_t m_Height = 800;
-        std::string m_Title = "Kava 1.0.0";
+    GLFWwindow *m_Window = nullptr;
 
-        bool m_FramebufferResized = false;
-    };
+    uint16_t m_Width = 1280;
+    uint16_t m_Height = 800;
+    std::string m_Title = "Kava 1.0.0";
+
+    bool m_FramebufferResized = false;
+};
 } // namespace Platform

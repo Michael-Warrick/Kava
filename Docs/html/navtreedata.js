@@ -25,6 +25,13 @@
 var NAVTREE =
 [
   [ "Kava", "index.html", [
+    [ "About", "index.html#autotoc_md1", null ],
+    [ "Prerequisites", "index.html#autotoc_md2", [
+      [ "Vulkan Specific", "index.html#autotoc_md3", null ]
+    ] ],
+    [ "Getting Started", "index.html#autotoc_md4", null ],
+    [ "Contributions", "index.html#autotoc_md5", null ],
+    [ "License", "index.html#autotoc_md6", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

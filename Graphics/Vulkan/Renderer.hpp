@@ -12,22 +12,24 @@
 #include "Surface.hpp"
 #include "SwapChain.hpp"
 
+#include "Debug.hpp"
+
 namespace Graphics {
-    namespace Vulkan {
-        class Renderer {
-        public:
-            explicit Renderer(GLFWwindow *window);
+namespace Vulkan {
+class Renderer {
+public:
+    explicit Renderer(GLFWwindow *window);
 
-            void DrawFrame();
+    void DrawFrame();
 
-        private:
-            GLFWwindow *m_Window;
+private:
+    GLFWwindow *m_Window;
 
-            Instance m_Instance;
-            Surface m_Surface;
-            Device m_Device;
-            SwapChain m_SwapChain;
-            Vulkan::Pipeline m_Pipeline;
-        };
-    } // namespace Vulkan
+    Instance m_Instance;
+    Surface m_Surface;
+    Device m_Device;
+    SwapChain m_SwapChain;
+    Vulkan::Pipeline m_Pipeline;
+};
+} // namespace Vulkan
 } // namespace Graphics
